@@ -1,0 +1,34 @@
+@startuml
+
+'Satte en bruger her, er ikke sikker på om det er rigtigt'
+class User{
+}
+
+class Controller{
+- String MSG;
+- String CURRENCY;
+- int PRCVAT;
+- double UserIn;
+runController();
+}
+class View{
+- double results;
+- String typeOfResult;
+doView();
+}
+
+class CalculateVat{
+- int PRCVAT;
+doVats(double UserIn)
+}
+class Dialog{
+- double number;
+doDialog();
+}
+
+Controller <|--- Dialog
+Controller <|--- View
+Controller <|--- CalculateVat
+Controller <|--- User
+User <|--- Controller
+@enduml
